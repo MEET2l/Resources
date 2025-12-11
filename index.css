@@ -1,0 +1,806 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>navbar</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Livvic:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,900&display=swap" rel="stylesheet">
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="" crossorigin="anonymous" />
+
+    
+ <style>
+/* ==============================
+   HERO SECTION
+================================*/
+.hero {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 80px 5%;
+    background: #ef933862;  /* Light pink like the screenshot */
+    border-radius: 0 0 50px 50px;
+    flex-wrap: wrap;
+}
+
+/* LEFT SIDE */
+.hero-left {
+    flex: 1;
+    min-width: 280px;
+    max-width: 550px;
+}
+
+.hero-left h1 {
+    font-size: 48px;
+    font-weight: 800;
+    color: #1b1b1b;
+    line-height: 1.2;
+    margin-bottom: 20px;
+}
+.hero-left h1 strong
+{
+  color: rgb(201, 133, 44);
+}
+
+.hero-left p {
+    font-size: 18px;
+    line-height: 1.6;
+    color: #333;
+    margin-bottom: 30px;
+}
+
+/* BUTTON GROUP */
+.hero-btn {
+    display: flex;
+    gap: 20px;
+}
+
+.b-btn,
+.p-btn {
+    padding: 14px 32px;
+    font-size: 16px;
+    border-radius: 12px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+/* Pink button (Enquire) */
+.b-btn {
+    background: #ff4f87;
+    color: #fff;
+}
+
+.b-btn:hover {
+    background: #ff336f;
+}
+
+/* Grey button */
+.p-btn {
+    background: #e3e3e3;
+    color: #1b1b1b;
+}
+
+.p-btn:hover {
+    background: #d4d4d4;
+}
+
+/* RIGHT SIDE */
+.hero-right {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    padding-top: 20px;
+    min-width: 280px;
+}
+
+.hero-right img {
+    width: 60%;
+    max-width: 550px;
+    border-radius: 40px;
+}
+
+/* ==============================
+   RESPONSIVE DESIGN
+================================*/
+@media (max-width: 900px) {
+    .hero {
+        flex-direction: column;
+        text-align: center;
+        padding: 60px 5%;
+    }
+
+    .hero-left h1 {
+        font-size: 38px;
+    }
+
+    .hero-btn {
+        justify-content: center;
+    }
+
+    .hero-right img {
+        max-width: 400px;
+    }
+}
+
+@media (max-width: 600px) {
+    .hero-left h1 {
+        font-size: 32px;
+    }
+
+    .hero-left p {
+        font-size: 16px;
+    }
+
+    .b-btn,
+    .p-btn {
+        width: 100%;
+        text-align: center;
+    }
+
+    .hero-btn {
+        flex-direction: column;
+        gap: 12px;
+    }
+}
+
+
+/* ==============================
+   CARD GRID → 2-1-2 LAYOUT
+================================*/
+.card-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); 
+    gap: 30px;
+    padding: 60px 5%;
+}
+
+/* Center card (3rd card) */
+.card-grid .card:nth-child(3) {
+    grid-column: 1 / span 2;
+    width: 60%;
+    justify-self: center;
+}
+/* Different card colors */
+.card-grid .card:nth-child(1) {
+    background: #ffe0ec;   /* Soft Pink – About SpacECE */
+}
+
+.card-grid .card:nth-child(2) {
+    background: #fff4c2;   /* Light Yellow – Start Your School */
+}
+
+.card-grid .card:nth-child(3) {
+    background: #eadcff;   /* Lavender – Upgrade Your School */
+}
+
+.card-grid .card:nth-child(4) {
+    background: #dfffe7;   /* Mint Green – Parent & Toddler */
+}
+
+.card-grid .card:nth-child(5) {
+    background: #d8ecff;   /* Soft Sky Blue – PTTC */
+}
+
+/* ==============================
+   CARD STYLE
+================================*/
+.card {
+    padding: 30px;
+    border-radius: 22px;
+    background: #fff;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+    transition: 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 35px rgba(0,0,0,0.12);
+}
+
+/* Card images */
+.card img {
+    width: 100%;
+    border-radius: 18px;
+    margin-bottom: 15px;
+}
+
+/* Headings */
+.card h1 {
+    font-size: 26px;
+    font-weight: 700;
+    margin-bottom: 8px;
+}
+
+.card h4 {
+    color: #ff4f87;
+    font-size: 17px;
+    margin-bottom: 12px;
+}
+
+/* Text */
+.card p {
+    color: #444;
+    line-height: 1.6;
+    margin-bottom: 15px;
+}
+
+/* List */
+.card ul {
+    padding-left: 20px;
+    margin-bottom: 20px;
+    list-style-type: disc;
+    font-size: 16px;
+}
+
+.card ul li {
+    margin-bottom: 8px;
+    color: #333;
+}
+
+/* Button */
+.card a {
+    display: inline-block;
+    background: #ff4f87;
+    color: #fff;
+    padding: 12px 24px;
+    border-radius: 10px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+.card a:hover {
+    background: #ff2b6d;
+}
+
+/* ==============================
+   RESPONSIVE
+================================*/
+@media (max-width: 900px) {
+    .card-grid .card:nth-child(3) {
+        width: 80%;
+    }
+}
+
+@media (max-width: 700px) {
+    .card-grid {
+        grid-template-columns: 1fr;
+    }
+
+    /* Center card becomes normal on mobile */
+    .card-grid .card:nth-child(3) {
+        grid-column: auto;
+        width: 100%;
+    }
+}
+
+
+
+    </style>
+</head>
+<body>
+
+<section>
+    <div class="top-bar">
+        Call us @ +91 1800 4120 1580
+    </div>
+</section>
+<!-- ============================ navbar =============================== -->
+<section>
+  <div class="container">
+    <nav class="navbar">
+        <div class="logo">
+            <img src="./assets/logo.png" alt="Spacece Logo">
+        </div>
+
+        <ul class="nav-links">
+
+            <li><a href="index.html">Home</a></li>
+
+            <!-- Programs -->
+            <li class="dropdown">
+                <a href="#">Programs <i class="fa-solid fa-angle-down"></i></a>
+                <ul class="dropdown-menu">
+                    <li><a href="./Programs/start_your_school.html">Start Your School</a></li>
+                    <li><a href="./Programs/upgrade_your_school.html">Upgrade Your School</a></li>
+                    <li><a href="./Programs/parents_toddler_program.html">Parents & Toddler Program</a></li>
+                </ul>
+            </li>
+
+            <!-- PTTC -->
+            <li><a href="PTTC.html">PTTC</a></li>
+
+            <!-- Admissions -->
+            <li class="dropdown">
+                <a href="Admission.html">Admissions</a>
+            </li>
+
+            <!-- About Us -->
+            <li class="dropdown">
+                <a href="Aboutus.html">About Us <i class="fa-solid fa-angle-down"></i></a>
+                <ul class="dropdown-menu">
+                    <li><a href="./Aboutus/Contactus.html">Contact Us</a></li>
+                    <li><a href="./Aboutus/Our_vision.html">Our Vision & Mission</a></li>
+                    <li><a href="./Aboutus/Our_Team.html">Our Team</a></li>
+                </ul>
+            </li>
+
+            <!-- Resources -->
+            <li class="dropdown">
+                <a href="Resources.html">Resources <i class="fa-solid fa-angle-down"></i></a>
+                <ul class="dropdown-menu">
+                    <li><a href="./Resources/Blogs.html">Blogs</a></li>
+                    <li><a href="./Resources/Parent_guides.html">Parent Guides</a></li>
+                </ul>
+            </li>
+
+
+        </ul>
+
+        <!-- Enquire Button -->
+        <a class="enquire-btn" href="javascript:void(0)" onclick="openPopup()">Enquire Now</a>
+
+        <!-- POPUP OVERLAY -->
+        <div class="popup-overlay" id="popup">
+            <div class="popup-box">
+
+                <!-- Close Button -->
+                <button class="close-popup" onclick="closePopup()">×</button>
+
+                <!-- ZOHO FORM STARTS HERE -->
+                <form action="https://forms.zohopublic.com/kidoenterprises/form/KreedoWebsiteContactUsForm/formperma/UxHWZ_P2f6BEfg5Q5jJFP8txtfC_XkHyoDowK3rbSIA/htmlRecords/submit"
+                    name="form" method="POST" id="form" accept-charset="UTF-8" class="enquire_form">
+
+
+                    <h2>Please fill out the form below and we will respond within 24hrs</h2>
+
+                    <!-- Hidden UTM Fields -->
+                    <input type="hidden" name="zf_referrer_name">
+                    <input type="hidden" name="zf_redirect_url">
+                    <input type="hidden" name="zc_gad">
+                    <input type="hidden" name="utm_source" id="utm_source">
+                    <input type="hidden" name="utm_medium" id="utm_medium">
+                    <input type="hidden" name="utm_campaign" id="utm_campaign">
+                    <input type="hidden" name="utm_device" id="utm_device">
+                    <input type="hidden" name="utm_Adgroup" id="utm_Adgroup">
+                    <input type="hidden" name="gclid" id="gclid">
+                    <input type="hidden" name="referrername" id="referrername">
+
+                    <!-- Inputs -->
+                    <input type="text" name="SingleLine" placeholder="Enter your name" required>
+                    <input type="email" name="Email" placeholder="Enter Your Email" required>
+                    <input type="text" name="PhoneNumber_countrycode" pattern="[0-9]{10}" placeholder="Number" required>
+
+                    <select name="Dropdown" required>
+                        <option value="">Select State</option>
+                        <option>Maharashtra</option>
+                        <option>Gujarat</option>
+                    </select>
+
+                    <select name="Dropdown1" required>
+                        <option value="">Category</option>
+                        <option value="Individual">Starting a new school</option>
+                        <option value="K-12 School">Upgrading my school</option>
+                        <option value="Teacher">Interested in Teacher Training Course</option>
+                    </select>
+
+                    <textarea name="MultiLine" placeholder="Message"></textarea>
+
+                    <!-- Captcha -->
+                    <span id="captchaText">IqOmSl</span>
+                    <input type="text" placeholder="Enter the above text" required>
+
+                    <!-- Checkbox -->
+                    <label class="check-label">
+                        <input type="checkbox" checked>
+                        Please contact me via WhatsApp, SMS, Phone, and Email
+                    </label>
+
+                    <!-- Submit -->
+                    <button class="zf-submitColor">Submit</button>
+                </form>
+                <!-- 🔥 ZOHO FORM ENDS HERE -->
+            </div>
+        </div>
+
+
+        <!-- Mobile Menu Icon -->
+        <!-- <button class="menu-btn" onclick="openMenu()">☰</button> -->
+        <button class="menu-btn">☰</button>
+    </nav>
+
+    <!-- BLACK OVERLAY -->
+    <!-- <div class="overlay" onclick="closeMenu()"></div> -->
+     <div class="overlay"></div>
+
+    <!-- SIDEBAR -->
+    <nav class="menu_btn_info">
+        <button class="close-btn">×</button>
+
+        <div class="slider_logo">
+            <img src="./assets/logo.png" alt="Spacece Logo">
+        </div>
+        <ul class="slider_menu nav-links">
+
+            <li><a href="index.html">Home</a></li>
+
+            <!-- Programs -->
+            <li class="slider_menu dropdown">
+                <a href="#">Programs <i class="fa-solid fa-angle-right"></i></a>
+                <ul class="slider_menu dropdown-menu">
+                    <li><a href="./Programs/start_your_school.html">Start Your School</a></li>
+                    <li><a href="./Programs/upgrade_your_school.html">Upgrade Your School</a></li>
+                    <li><a href="./Programs/parents_toddler_program.html">Parents & Toddler Program</a></li>
+                </ul>
+            </li>
+
+            <!-- PTTC -->
+            <li><a href="PTTC.html">PTTC</a></li>
+
+            <!-- Admissions -->
+            <li class="sliderbar_menu dropdown">
+                <a href="Admission.html">Admissions</a>
+            </li>
+
+            <!-- About Us -->
+            <li class="sliderbar_menu dropdown">
+                <a href="./Aboutus/Aboutus.html">About Us <i class="fa-solid fa-angle-right"></i></a>
+                <ul class="sliderbar_menu dropdown-menu">
+                    <li><a href="./Aboutus/Contactus.html">Contact Us</a></li>
+                    <li><a href="./Aboutus/Our_vision.html">Our Vision & Mission</a></li>
+                    <li><a href="./Aboutus/Our_Team.html">Our Team</a></li>
+                </ul>
+            </li>
+
+            <!-- Resources -->
+            <li class="sliderbar_menu dropdown">
+                <a href="#">Resources <i class="fa-solid fa-angle-right"></i></a>
+                <ul class="sliderbar_menu dropdown-menu">
+                    <li><a href="./Resources/Blogs.html">Blogs</a></li>
+                    <li><a href="./Resources/Parent_guides.html">Parent Guides</a></li>
+                </ul>
+            </li>
+
+
+        </ul>
+    </nav>
+  </div>
+</section>
+
+
+<!-- /* ==============================
+      HERO SECTION
+================================*/ -->
+
+
+<section class="hero">
+    <div class="hero-left">
+      <h1>SpacECE <strong>Resources</strong> </h1>
+      <p>
+        A curated collection of curriculum modules, activity guides, teacher training material, and downloadable assets to help preschools, teachers and parents deliver joyful and effective early learning.
+      </p>
+      <div class="hero-btn">
+        <a href="" class="b-btn">Blogs</a>
+        <a href="" class="p-btn">News Letter</a>
+      </div>
+    </div>
+    <div class="hero-right">
+      <img src="img/hero.png" alt="">
+    </div>
+</section>
+
+
+<!-- ======================================================
+                main content 
+====================================================== -->
+<section class="main-content">
+
+  <div class="card-grid">
+
+      <!-- About SpacECE -->
+      <div class="card">
+        <img src="img/About-us.png" alt="">
+        <h1>About SpacECE</h1>
+        <h4>Mission, vision & offerings</h4>
+        <p>SpacECE is a mission-led initiative focused on early learning for children aged 2–6. We provide school readiness programs, teacher training (PTTC), preschool setup support, parent engagement tools and research-backed curriculum & activities.</p>
+        <ul>
+          <li>School readiness programs</li>
+          <li>Teacher training & certification (PTTC)</li>
+          <li>Preschool setup and operational guides</li>
+          <li>Parent engagement & communication tools</li>
+          <li>Activity banks, lesson plans & assessment tools</li>
+        </ul>
+        <div>
+          <a href="#">About Us</a>
+        </div>
+      </div>
+
+      <!-- Start-your-school -->
+      <div class="card">
+        <img src="img/start-your-school.png" alt="Start Your School">
+
+        <h1>Start Your School</h1>
+        <h4>Launch your preschool with expert support</h4>
+
+        <p>
+            SpacECE provides end-to-end guidance to help entrepreneurs and educators set up successful preschools. From planning and licensing to curriculum and teacher readiness, we make the entire process simple and achievable.
+        </p>
+      
+        <ul>
+            <li>Complete preschool setup guidance</li>
+            <li>Branding, marketing & admissions support</li>
+            <li>Classroom design & learning environment planning</li>
+            <li>Curriculum & activity kits for all levels</li>
+            <li>Teacher hiring, training & onboarding</li>
+        </ul>
+      
+        <div>
+            <a href="#">Start Your School</a>
+        </div>
+      </div>
+
+
+      <!-- Upgrade-Your-School -->
+      <div class="card">
+        <img src="img/upgrade-school.png" alt="Upgrade Your School">
+          
+        <h1>Upgrade Your School</h1>
+        <h4>Enhance quality, learning outcomes & operations</h4>
+          
+        <p>
+            SpacECE supports existing preschools in improving their academic quality,
+            teacher performance, classroom environment and parent satisfaction through
+            structured quality-enhancement programs.
+        </p>
+      
+        <ul>
+            <li>Curriculum upgrade & activity planning</li>
+            <li>Teacher skill development & refresher training</li>
+            <li>Classroom redesign for better learning</li>
+            <li>Digital tools for communication & assessments</li>
+            <li>Operational and academic quality audits</li>
+        </ul>
+      
+        <div>
+            <a href="#">Upgrade Your School</a>
+        </div>
+      </div>
+
+
+      <!-- Parent-Toddler -->
+      <div class="card">
+        <img src="img/parent-toddler.png" alt="Parent & Toddler Program">
+
+        <h1>Parent & Toddler Program</h1>
+        <h4>Foundational learning through joyful bonding</h4>
+
+        <p>
+            SpacECE offers an early engagement program designed for children aged 
+            1.5–3 years along with their parents. The sessions build confidence, 
+            social skills, sensory exploration and early learning readiness.
+        </p>
+      
+        <ul>
+            <li>Structured play-based learning sessions</li>
+            <li>Parent-child bonding activities</li>
+            <li>Music, storytelling & sensory play</li>
+            <li>Social and emotional development support</li>
+            <li>Foundational skills for preschool readiness</li>
+        </ul>
+      
+        <div>
+            <a href="#">Parent & Toddler Program</a>
+        </div>
+      </div>
+
+
+      <!-- card PTTC -->
+      <div class="card">
+        <img src="img/pttc.png" alt="PTTC - Preschool Teacher Training Course">
+
+        <h1>PTTC – Teacher Training</h1>
+        <h4>Build skilled, confident and certified preschool educators</h4>
+
+        <p>
+            The SpacECE Preschool Teacher Training Course equips aspiring and 
+            existing educators with practical knowledge, modern teaching methods, 
+            classroom management skills and child development understanding.
+        </p>
+      
+        <ul>
+            <li>NCF/NIPUN-aligned curriculum training</li>
+            <li>Child development & pedagogy modules</li>
+            <li>Activity-based teaching methods</li>
+            <li>Classroom management & assessment tools</li>
+            <li>Internship support and certification</li>
+        </ul>
+      
+        <div>
+            <a href="#">PTTC Program</a>
+        </div>
+      </div>
+  </div>
+</section>
+
+
+<!-- ============================  Footer  =============================== -->
+<footer class="footer">
+    <div class="container">
+      <div class="footer-info">
+        <!-- Column 1: Logo + Social -->
+        <div class="footer-section">
+            <img src="assets/logo.png" class="footer-logo" alt="Preschool Logo">
+
+            <p class="footer-text">
+                Building bright futures with joyful learning.
+            </p>
+
+            <!-- Google Map -->
+            <div class="footer-map">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3784.713390921391!2d73.80806407371841!3d18.45131787128889!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc29513dc000001%3A0x6bcacb06efbe645c!2sSpacECE%20INDIA%20FOUNDATION!5e0!3m2!1sen!2sin!4v1764842317194!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+        </div>
+
+
+
+        <!-- Column 2: Contact Form (Parents Admission Inquiry) -->
+        <div class="footer-section">
+            <h3>Contact Us</h3>
+
+            <form class="footer-form">
+                <input type="text" placeholder="Your Name">
+                <input type="email" placeholder="Your Email">
+                <input type="text" placeholder="Your Phone">
+                <select>
+                    <option>Select Program</option>
+                    <option>Playgroup</option>
+                    <option>Nursery</option>
+                    <option>Jr. KG</option>
+                    <option>Sr. KG</option>
+                </select>
+                <textarea placeholder="Message"></textarea>
+                <button type="submit" class="footer-btn">Submit</button>
+            </form>
+        </div>
+
+        <!-- Column 3: Quick Links -->
+        <div class="footer-section">
+            <h3>Quick Links</h3>
+            <div class="link-wrap">
+              <ul class="footer-links">
+                <li><a href="#">About Preschool</a></li>
+                <li><a href="#">Our Programs</a></li>
+                <li><a href="#">Our Vision</a></li>
+              </ul>
+              <ul class="footer-links">
+                <li><a href="#">Parent Resources</a></li>
+                <li><a href="#">About Us</a></li>
+                <li><a href="#">Contact Us</a></li>
+              </ul>
+            </div>
+            <div class="footer-social">
+              <a href="https://www.facebook.com/SpacECE/"><i class="fa-brands fa-facebook-f"></i></a>
+              <a href="https://www.twitter.com/SpacECE/"><i class="fa-brands fa-twitter"></i></a>
+              <a href="https://www.instagram.com/SpacECE/"><i class="fa-brands fa-instagram"></i></a>
+              <a href="https://www.youtube.com/SpacECE/"><i class="fa-brands fa-youtube"></i></a>
+              <a href="https://www.Whatsapp.com/SpacECE/"><i class="fa-brands fa-whatsapp"></i></a>
+            </div>
+
+        </div>
+      </div>
+    </div>
+    <hr>
+    <!-- Bottom -->
+    <div class="footer-bottom">
+        © 2025 Your Preschool Name — All Rights Reserved
+    </div>
+</footer>
+
+
+</body>
+</html>
+
+
+
+<!-- ============================  Dropdown button  =============================== -->
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+    const dropdown = document.querySelector(".dropdown > a");
+    const dropdownMenu = document.querySelector(".dropdown-menu");
+
+    dropdown.addEventListener("click", function (e) {
+        e.preventDefault(); 
+        dropdownMenu.style.display =
+            dropdownMenu.style.display === "block" ? "none" : "block";
+    });
+
+    document.addEventListener("click", function (e) {
+        if (!dropdown.contains(e.target) && !dropdownMenu.contains(e.target)) {
+            dropdownMenu.style.display = "none";
+        }
+    });
+});
+</script>
+
+<!-- ============================ Slider Menu Button =============================== -->
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+
+    const menu = document.querySelector(".menu_btn_info");  // RIGHT SIDEBAR
+    const overlay = document.querySelector(".overlay");     // DARK BACKGROUND
+    const menuBtn = document.querySelector(".menu-btn");    // ☰ BUTTON
+    const closeBtn = document.querySelector(".close-btn");  // CROSS BUTTON
+
+    // OPEN MENU
+    menuBtn.addEventListener("click", () => {
+        menu.classList.add("active");
+        overlay.classList.add("show");
+    });
+
+    // CLOSE MENU (X button)
+    closeBtn.addEventListener("click", () => {
+        menu.classList.remove("active");
+        overlay.classList.remove("show");
+    });
+
+    // CLOSE MENU when clicking outside
+    overlay.addEventListener("click", () => {
+        menu.classList.remove("active");
+        overlay.classList.remove("show");
+    });
+
+});
+</script>
+
+<!-- ============================ Slider Dropdown Menu  =============================== -->
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+
+    // MOBILE MENU OPEN
+    const menuBtn = document.querySelector(".menu-btn");
+    const sidebar = document.querySelector(".menu_btn_info");
+    const overlay = document.querySelector(".overlay");
+    const closeBtn = document.querySelector(".close-btn");
+
+    menuBtn.addEventListener("click", () => {
+        sidebar.classList.add("active");
+        overlay.classList.add("show");
+    });
+
+    closeBtn.addEventListener("click", () => {
+        sidebar.classList.remove("active");
+        overlay.classList.remove("show");
+    });
+
+    overlay.addEventListener("click", () => {
+        sidebar.classList.remove("active");
+        overlay.classList.remove("show");
+    });
+
+    // ⭐ MOBILE DROPDOWN OPEN/CLOSE ON CLICK
+    const dropdowns = document.querySelectorAll(".menu_btn_info .dropdown");
+
+    dropdowns.forEach(drop => {
+        drop.addEventListener("click", function (e) {
+            e.stopPropagation();
+            this.classList.toggle("open");
+        });
+    });
+});
+</script>
+
+<!-- ============================ Equairy form popup-box =============================== -->
+<script>
+    function openPopup() {
+        document.getElementById("popup").style.display = "block";
+        document.body.classList.add("no-scroll");
+    }
+    function closePopup() {
+        document.getElementById("popup").style.display = "none";
+        document.body.classList.remove("no-scroll");
+    }
+</script>
+          
