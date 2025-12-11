@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>navbar</title>
-    <link rel="stylesheet" href="css/style.css">
+    <title>SpacECE-Resources</title>
+    <link rel="stylesheet" href="../css/style.css">
     <link href="https://fonts.googleapis.com/css2?family=Livvic:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,900&display=swap" rel="stylesheet">
     <!-- Font Awesome for icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
@@ -51,41 +51,6 @@
     margin-bottom: 30px;
 }
 
-/* BUTTON GROUP */
-.hero-btn {
-    display: flex;
-    gap: 20px;
-}
-
-.b-btn,
-.p-btn {
-    padding: 14px 32px;
-    font-size: 16px;
-    border-radius: 12px;
-    font-weight: 600;
-    text-decoration: none;
-    transition: 0.3s;
-}
-
-/* Pink button (Enquire) */
-.b-btn {
-    background: #ff4f87;
-    color: #fff;
-}
-
-.b-btn:hover {
-    background: #ff336f;
-}
-
-/* Grey button */
-.p-btn {
-    background: #e3e3e3;
-    color: #1b1b1b;
-}
-
-.p-btn:hover {
-    background: #d4d4d4;
-}
 
 /* RIGHT SIDE */
 .hero-right {
@@ -132,17 +97,6 @@
 
     .hero-left p {
         font-size: 16px;
-    }
-
-    .b-btn,
-    .p-btn {
-        width: 100%;
-        text-align: center;
-    }
-
-    .hero-btn {
-        flex-direction: column;
-        gap: 12px;
     }
 }
 
@@ -243,7 +197,7 @@
 /* Button */
 .card a {
     display: inline-block;
-    background: #ff4f87;
+    background: #ff954f;
     color: #fff;
     padding: 12px 24px;
     border-radius: 10px;
@@ -253,7 +207,7 @@
 }
 
 .card a:hover {
-    background: #ff2b6d;
+    background: #ff9c2b;
 }
 
 /* ==============================
@@ -274,6 +228,290 @@
     .card-grid .card:nth-child(3) {
         grid-column: auto;
         width: 100%;
+    }
+}
+
+
+/* ============================================================
+      GLOBAL RESPONSIVE — ALL DEVICES
+============================================================ */
+
+/* ========= TABLETS (max 1024px) ========= */
+@media (max-width: 1024px) {
+
+    .navbar {
+        padding: 12px 25px;
+    }
+
+    .navbar .logo img {
+        max-width: 140px;
+    }
+
+    .hero {
+        padding: 70px 5%;
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .hero-left h1 {
+        font-size: 40px;
+    }
+
+    .hero-right img {
+        width: 70%;
+    }
+
+    .card-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .card-grid .card:nth-child(3) {
+        width: 75%;
+    }
+}
+
+
+/* ========= MOBILE (max 768px) ========= */
+@media (max-width: 768px) {
+
+    .top-bar {
+        font-size: 13px;
+        padding: 8px 0;
+    }
+
+    .navbar {
+        padding: 10px 15px;
+    }
+
+    .navbar .logo img {
+        max-width: 120px;
+    }
+
+    /* HERO */
+    .hero {
+        padding: 50px 5%;
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .hero-left h1 {
+        font-size: 34px;
+    }
+
+    .hero-left p {
+        font-size: 16px;
+    }
+
+    .hero-btn {
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    .hero-btn a {
+        width: 100%;
+    }
+
+    .hero-right img {
+        width: 80%;
+    }
+
+    /* CARDS → Single column */
+    .card-grid {
+        grid-template-columns: 1fr;
+        gap: 25px;
+    }
+
+    .card-grid .card:nth-child(3) {
+        width: 100%;
+        grid-column: auto;
+    }
+
+    .card h1 {
+        font-size: 22px;
+    }
+
+    .card p,
+    .card ul li {
+        font-size: 15px;
+    }
+
+    /* Popup */
+    .popup-box {
+        width: 90%;
+        height: auto;
+        max-height: 85vh;
+    }
+}
+
+
+/* ========= SMALL MOBILE (max 480px) ========= */
+@media (max-width: 480px) {
+
+    .navbar .logo img {
+        max-width: 95px;
+    }
+
+    .hero-left h1 {
+        font-size: 30px;
+    }
+
+    .hero-right img {
+        width: 95%;
+    }
+
+    .card {
+        padding: 20px;
+    }
+
+    .card h1 {
+        font-size: 20px;
+    }
+
+    .footer-section {
+        width: 100%;
+        text-align: center;
+    }
+
+    .footer-info {
+        flex-direction: column;
+    }
+
+    .footer-social {
+        gap: 12px;
+    }
+}
+
+
+/* ========= TINY DEVICES (max 380px) ========= */
+@media (max-width: 380px) {
+
+    .navbar .logo img {
+        max-width: 85px;
+    }
+
+    .hero-left h1 {
+        font-size: 26px;
+    }
+
+    .hero-right img {
+        width: 100%;
+    }
+
+    .popup-box {
+        width: 94%;
+        padding: 12px;
+    }
+
+    .card h1 {
+        font-size: 18px;
+    }
+}
+
+
+/* ============================================================
+      LAPTOP & DESKTOP RESPONSIVE
+============================================================ */
+
+/* ========= NORMAL LAPTOP (1025px–1366px) ========= */
+@media (min-width: 1025px) and (max-width: 1366px) {
+
+    .navbar {
+        padding: 15px 40px;
+    }
+
+    .hero-left h1 {
+        font-size: 46px;
+    }
+
+    .hero-right img {
+        width: 65%;
+    }
+
+    .card-grid {
+        gap: 35px;
+    }
+}
+
+
+/* ========= LARGE LAPTOP (1367px–1600px) ========= */
+@media (min-width: 1367px) and (max-width: 1600px) {
+
+    .container {
+        max-width: 1400px;
+    }
+
+    .navbar {
+        padding: 18px 55px;
+    }
+
+    .hero-left h1 {
+        font-size: 52px;
+    }
+
+    .hero-right img {
+        width: 60%;
+    }
+
+    .card-grid {
+        gap: 40px;
+    }
+}
+
+
+/* ========= DESKTOP / LARGE PC (1601px–1920px) ========= */
+@media (min-width: 1601px) {
+
+    .container {
+        max-width: 1500px;
+    }
+
+    .navbar {
+        padding: 25px 70px;
+    }
+
+    .hero {
+        padding: 100px 8%;
+    }
+
+    .hero-left h1 {
+        font-size: 60px;
+    }
+
+    .hero-right img {
+        width: 55%;
+    }
+
+    .card-grid {
+        gap: 50px;
+    }
+}
+
+
+/* ========= ULTRA-WIDE (1921px+) ========= */
+@media (min-width: 1921px) {
+
+    .container {
+        max-width: 1800px;
+    }
+
+    .hero {
+        padding: 120px 10%;
+    }
+
+    .hero-left h1 {
+        font-size: 70px;
+    }
+
+    .hero-left p {
+        font-size: 22px;
+    }
+
+    .card-grid {
+        gap: 60px;
+    }
+
+    .card {
+        padding: 40px;
     }
 }
 
@@ -482,10 +720,6 @@
       <p>
         A curated collection of curriculum modules, activity guides, teacher training material, and downloadable assets to help preschools, teachers and parents deliver joyful and effective early learning.
       </p>
-      <div class="hero-btn">
-        <a href="" class="b-btn">Blogs</a>
-        <a href="" class="p-btn">News Letter</a>
-      </div>
     </div>
     <div class="hero-right">
       <img src="img/hero.png" alt="">
@@ -632,7 +866,7 @@
       <div class="footer-info">
         <!-- Column 1: Logo + Social -->
         <div class="footer-section">
-            <img src="Resources/img/logo.png" class="footer-logo" alt="Preschool Logo">
+            <img src="assets/logo.png" class="footer-logo" alt="Preschool Logo">
 
             <p class="footer-text">
                 Building bright futures with joyful learning.
@@ -803,4 +1037,3 @@ document.addEventListener("DOMContentLoaded", function () {
         document.body.classList.remove("no-scroll");
     }
 </script>
-          
