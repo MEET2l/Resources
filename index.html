@@ -3,15 +3,32 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SpacECE-Resources</title>
+    <title>SpacECE – Redources</title>
     <link rel="stylesheet" href="css/style.css">
     <link href="https://fonts.googleapis.com/css2?family=Livvic:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,900&display=swap" rel="stylesheet">
     <!-- Font Awesome for icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="" crossorigin="anonymous" />
 
-    
- <style>
+
+<style>
+    :root {
+    --brand-yellow: #f4b400;   /* Logo yellow */
+    --brand-dark: #1b1b1b;     /* Text / outline */
+    --brand-soft: #fff6e1;     /* Soft background */
+    --brand-accent: #c9852c;   /* Highlight gold */
+}
+
+/* ==============================
+   GLOBAL FONT – LIVVIC
+================================*/
+* {
+    font-family: "Livvic", sans-serif;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
 /* ==============================
    HERO SECTION
 ================================*/
@@ -19,11 +36,15 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 80px 5%;
-    background: #ef933862;  /* Light pink like the screenshot */
-    border-radius: 0 0 50px 50px;
+    padding: 90px 6%;
+    background: linear-gradient(
+        135deg,
+        var(--brand-soft),
+        #fff
+    );
     flex-wrap: wrap;
 }
+
 
 /* LEFT SIDE */
 .hero-left {
@@ -34,21 +55,27 @@
 
 .hero-left h1 {
     font-size: 48px;
-    font-weight: 800;
-    color: #1b1b1b;
-    line-height: 1.2;
-    margin-bottom: 20px;
+    font-weight: 900;
+    color: var(--brand-dark);
+    line-height: 1.15;
+    margin-bottom: 22px;
 }
-.hero-left h1 strong
-{
-  color: rgb(201, 133, 44);
+
+.hero-left h1 strong {
+    color: var(--brand-yellow);
 }
+
 
 .hero-left p {
     font-size: 18px;
-    line-height: 1.6;
+    line-height: 1.7;
     color: #333;
-    margin-bottom: 30px;
+    margin-bottom: 32px;
+}
+
+.hero-left strong {
+    color: var(--brand-accent);
+    font-weight: 700;
 }
 
 
@@ -62,9 +89,10 @@
 }
 
 .hero-right img {
-    width: 60%;
-    max-width: 550px;
-    border-radius: 40px;
+    width: 100%;
+    max-width: 520px;
+    border-radius: 36px;
+    box-shadow: 0 18px 40px rgba(0,0,0,0.12);
 }
 
 /* ==============================
@@ -74,19 +102,11 @@
     .hero {
         flex-direction: column;
         text-align: center;
-        padding: 60px 5%;
+        padding: 70px 6%;
     }
 
     .hero-left h1 {
         font-size: 38px;
-    }
-
-    .hero-btn {
-        justify-content: center;
-    }
-
-    .hero-right img {
-        max-width: 400px;
     }
 }
 
@@ -100,43 +120,43 @@
     }
 }
 
-
 /* ==============================
-   CARD GRID → 2-1-2 LAYOUT
+    CARD GRID
 ================================*/
 .card-grid {
     display: grid;
-    grid-template-columns: repeat(2, 1fr); 
-    gap: 30px;
-    padding: 60px 5%;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 32px;
+    padding: 70px 6%;
+
 }
 
-/* Center card (3rd card) */
-.card-grid .card:nth-child(3) {
-    grid-column: 1 / span 2;
-    width: 60%;
-    justify-self: center;
+.card {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    padding: 30px;
+    border-radius: 22px;
+    background: var(--brand-soft-yellow);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+    transition: 0.35s ease;
 }
+
+.card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 18px 40px rgba(0,0,0,0.12);
+}
+
+
+.card p {
+    flex-grow: 1;
+}
+
 /* Different card colors */
-.card-grid .card:nth-child(1) {
-    background: #ffe0ec;   /* Soft Pink – About SpacECE */
+.card-grid .card {
+    background: #fff4c2;  
 }
 
-.card-grid .card:nth-child(2) {
-    background: #fff4c2;   /* Light Yellow – Start Your School */
-}
-
-.card-grid .card:nth-child(3) {
-    background: #eadcff;   /* Lavender – Upgrade Your School */
-}
-
-.card-grid .card:nth-child(4) {
-    background: #dfffe7;   /* Mint Green – Parent & Toddler */
-}
-
-.card-grid .card:nth-child(5) {
-    background: #d8ecff;   /* Soft Sky Blue – PTTC */
-}
 
 /* ==============================
    CARD STYLE
@@ -158,7 +178,7 @@
 .card img {
     width: 100%;
     border-radius: 18px;
-    margin-bottom: 15px;
+    margin-bottom: 18px;
 }
 
 /* Headings */
@@ -168,359 +188,71 @@
     margin-bottom: 8px;
 }
 
-.card h4 {
-    color: #ff4f87;
-    font-size: 17px;
-    margin-bottom: 12px;
+.card h1 {
+    font-size: 26px;
+    font-weight: 800;
+    color: var(--brand-dark);
+    margin-bottom: 6px;
 }
 
-/* Text */
-.card p {
-    color: #444;
-    line-height: 1.6;
-    margin-bottom: 15px;
+.card h4 {
+    color: #c9852c; /* logo accent */
+    font-size: 17px;
+    font-weight: 600;
+    margin-bottom: 14px;
 }
+
+.card p {
+    color: var(--brand-text);
+    line-height: 1.65;
+    margin-bottom: 16px;
+    flex-grow: 1;
+}
+
 
 /* List */
 .card ul {
-    padding-left: 20px;
-    margin-bottom: 20px;
-    list-style-type: disc;
-    font-size: 16px;
+    padding-left: 18px;
+    margin-bottom: 22px;
 }
 
 .card ul li {
     margin-bottom: 8px;
-    color: #333;
+    color: #444;
 }
 
 /* Button */
 .card a {
-    display: inline-block;
-    background: #ff954f;
-    color: #fff;
-    padding: 12px 24px;
+    align-self: flex-start;
+    background: var(--brand-yellow);
+    color: #000;
+    padding: 12px 26px;
     border-radius: 10px;
     text-decoration: none;
-    font-weight: 600;
-    transition: 0.3s;
+    font-weight: 700;
+    transition: 0.3s ease;
 }
 
 .card a:hover {
-    background: #ff9c2b;
+    background: #e2a800;
 }
+
 
 /* ==============================
    RESPONSIVE
 ================================*/
-@media (max-width: 900px) {
-    .card-grid .card:nth-child(3) {
-        width: 80%;
-    }
-}
-
 @media (max-width: 700px) {
     .card-grid {
         grid-template-columns: 1fr;
-    }
-
-    /* Center card becomes normal on mobile */
-    .card-grid .card:nth-child(3) {
-        grid-column: auto;
-        width: 100%;
-    }
-}
-
-
-/* ============================================================
-      GLOBAL RESPONSIVE — ALL DEVICES
-============================================================ */
-
-/* ========= TABLETS (max 1024px) ========= */
-@media (max-width: 1024px) {
-
-    .navbar {
-        padding: 12px 25px;
-    }
-
-    .navbar .logo img {
-        max-width: 140px;
-    }
-
-    .hero {
-        padding: 70px 5%;
-        flex-direction: column;
-        text-align: center;
-    }
-
-    .hero-left h1 {
-        font-size: 40px;
-    }
-
-    .hero-right img {
-        width: 70%;
-    }
-
-    .card-grid {
-        grid-template-columns: 1fr 1fr;
-    }
-
-    .card-grid .card:nth-child(3) {
-        width: 75%;
-    }
-}
-
-
-/* ========= MOBILE (max 768px) ========= */
-@media (max-width: 768px) {
-
-    .top-bar {
-        font-size: 13px;
-        padding: 8px 0;
-    }
-
-    .navbar {
-        padding: 10px 15px;
-    }
-
-    .navbar .logo img {
-        max-width: 120px;
-    }
-
-    /* HERO */
-    .hero {
         padding: 50px 5%;
-        flex-direction: column;
-        text-align: center;
-    }
-
-    .hero-left h1 {
-        font-size: 34px;
-    }
-
-    .hero-left p {
-        font-size: 16px;
-    }
-
-    .hero-btn {
-        flex-direction: column;
-        gap: 12px;
-    }
-
-    .hero-btn a {
-        width: 100%;
-    }
-
-    .hero-right img {
-        width: 80%;
-    }
-
-    /* CARDS → Single column */
-    .card-grid {
-        grid-template-columns: 1fr;
-        gap: 25px;
-    }
-
-    .card-grid .card:nth-child(3) {
-        width: 100%;
-        grid-column: auto;
-    }
-
-    .card h1 {
-        font-size: 22px;
-    }
-
-    .card p,
-    .card ul li {
-        font-size: 15px;
-    }
-
-    /* Popup */
-    .popup-box {
-        width: 90%;
-        height: auto;
-        max-height: 85vh;
     }
 }
-
-
-/* ========= SMALL MOBILE (max 480px) ========= */
-@media (max-width: 480px) {
-
-    .navbar .logo img {
-        max-width: 95px;
-    }
-
-    .hero-left h1 {
-        font-size: 30px;
-    }
-
-    .hero-right img {
-        width: 95%;
-    }
-
-    .card {
-        padding: 20px;
-    }
-
-    .card h1 {
-        font-size: 20px;
-    }
-
-    .footer-section {
-        width: 100%;
-        text-align: center;
-    }
-
-    .footer-info {
-        flex-direction: column;
-    }
-
-    .footer-social {
-        gap: 12px;
-    }
-}
-
-
-/* ========= TINY DEVICES (max 380px) ========= */
-@media (max-width: 380px) {
-
-    .navbar .logo img {
-        max-width: 85px;
-    }
-
-    .hero-left h1 {
-        font-size: 26px;
-    }
-
-    .hero-right img {
-        width: 100%;
-    }
-
-    .popup-box {
-        width: 94%;
-        padding: 12px;
-    }
-
-    .card h1 {
-        font-size: 18px;
-    }
-}
-
-
-/* ============================================================
-      LAPTOP & DESKTOP RESPONSIVE
-============================================================ */
-
-/* ========= NORMAL LAPTOP (1025px–1366px) ========= */
-@media (min-width: 1025px) and (max-width: 1366px) {
-
-    .navbar {
-        padding: 15px 40px;
-    }
-
-    .hero-left h1 {
-        font-size: 46px;
-    }
-
-    .hero-right img {
-        width: 65%;
-    }
-
-    .card-grid {
-        gap: 35px;
-    }
-}
-
-
-/* ========= LARGE LAPTOP (1367px–1600px) ========= */
-@media (min-width: 1367px) and (max-width: 1600px) {
-
-    .container {
-        max-width: 1400px;
-    }
-
-    .navbar {
-        padding: 18px 55px;
-    }
-
-    .hero-left h1 {
-        font-size: 52px;
-    }
-
-    .hero-right img {
-        width: 60%;
-    }
-
-    .card-grid {
-        gap: 40px;
-    }
-}
-
-
-/* ========= DESKTOP / LARGE PC (1601px–1920px) ========= */
-@media (min-width: 1601px) {
-
-    .container {
-        max-width: 1500px;
-    }
-
-    .navbar {
-        padding: 25px 70px;
-    }
-
-    .hero {
-        padding: 100px 8%;
-    }
-
-    .hero-left h1 {
-        font-size: 60px;
-    }
-
-    .hero-right img {
-        width: 55%;
-    }
-
-    .card-grid {
-        gap: 50px;
-    }
-}
-
-
-/* ========= ULTRA-WIDE (1921px+) ========= */
-@media (min-width: 1921px) {
-
-    .container {
-        max-width: 1800px;
-    }
-
-    .hero {
-        padding: 120px 10%;
-    }
-
-    .hero-left h1 {
-        font-size: 70px;
-    }
-
-    .hero-left p {
-        font-size: 22px;
-    }
-
-    .card-grid {
-        gap: 60px;
-    }
-
-    .card {
-        padding: 40px;
-    }
-}
-
 
 
     </style>
 </head>
 <body>
-
+<!-- ============================ Top Bar =============================== -->
 <section>
     <div class="top-bar">
         Call us @ +91 1800 4120 1580
@@ -531,7 +263,7 @@
   <div class="container">
     <nav class="navbar">
         <div class="logo">
-            <img src="Resources/img/logo.png" alt="Spacece Logo">
+            <img src="img/logo.png" alt="Spacece Logo">
         </div>
 
         <ul class="nav-links">
@@ -708,7 +440,6 @@
   </div>
 </section>
 
-
 <!-- /* ==============================
       HERO SECTION
 ================================*/ -->
@@ -718,7 +449,9 @@
     <div class="hero-left">
       <h1>SpacECE <strong>Resources</strong> </h1>
       <p>
-        A curated collection of curriculum modules, activity guides, teacher training material, and downloadable assets to help preschools, teachers and parents deliver joyful and effective early learning.
+        A thoughtfully curated collection of <strong>research-backed curriculum modules</strong>, <strong>hands-on activity guides</strong>, <strong>teacher training resources</strong>, and <strong>ready-to-use downloadable tools</strong>-designed to support preschools, educators, and parents in delivering joyful, meaningful, and developmentally appropriate early learning experiences.
+        <br><br>
+        From classroom-ready lesson plans to parent-friendly learning activities, these resources empower adults to nurture curiosity, confidence, creativity, and school readiness in every child.
       </p>
     </div>
     <div class="hero-right">
@@ -860,13 +593,17 @@
 </section>
 
 
+
+
+
+
 <!-- ============================  Footer  =============================== -->
 <footer class="footer">
     <div class="container">
       <div class="footer-info">
         <!-- Column 1: Logo + Social -->
         <div class="footer-section">
-            <img src="assets/logo.png" class="footer-logo" alt="Preschool Logo">
+            <img src="img/logo.png" class="footer-logo" alt="Preschool Logo">
 
             <p class="footer-text">
                 Building bright futures with joyful learning.
@@ -936,6 +673,8 @@
 
 </body>
 </html>
+
+
 
 
 
